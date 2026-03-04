@@ -1,145 +1,222 @@
-<div style="
-font-family: 'Segoe UI', Georgia, serif;
-min-height:100vh;
+<style>
 
-/* Premium finance background */
-background:
-radial-gradient(circle at 20% 15%, rgba(212,175,55,0.25), transparent 60%),
-radial-gradient(circle at 80% 85%, rgba(0,160,120,0.18), transparent 65%),
-linear-gradient(180deg,#020202,#090909,#0f0f0f);
+/* =====================================================
+   SWISS PRIVATE BANK GOD MODE UI
+   Elite Institutional Wealth Operating Interface
+===================================================== */
 
-color:#e8e8e8;
-padding:60px;
-">
+/* ===== Base Universe ===== */
 
-<div style="
-max-width:1200px;
-margin:auto;
+body{
 
-/* Glass banking panel */
-background:rgba(0,0,0,0.88);
-backdrop-filter: blur(20px);
+    margin:0;
 
-padding:60px;
-border-radius:50px;
+    font-family:
+    "Helvetica Neue",
+    "Segoe UI",
+    Roboto,
+    Georgia,
+    serif;
 
-border:1px solid rgba(212,175,55,0.08);
+    background:
 
-box-shadow:
-0 0 120px rgba(0,0,0,0.9),
-inset 0 0 40px rgba(255,255,255,0.01);
-">
+    radial-gradient(circle at 15% 15%, rgba(212,175,55,0.28), transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(0,180,140,0.18), transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(20,20,20,0.95), #030303 70%);
 
-<h1 style="
-color:#d4af37;
-letter-spacing:6px;
-text-align:center;
-font-weight:300;
-">
-SWISS PRIVATE BANK ELITE
-</h1>
+    color:#e8e8e8;
 
-<p style="text-align:center;opacity:0.7;">
-Premium wealth simulation dashboard
-</p>
+    min-height:100vh;
 
-<!-- Metrics Row -->
-<div style="
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-margin-top:60px;
-">
-
-<div>
-<div style="opacity:0.6;">Kapitał</div>
-<div style="font-size:36px;">€250 000</div>
-</div>
-
-<div>
-<div style="opacity:0.6;">Model zwrotu</div>
-<div style="font-size:36px;color:#00ffaa;">
-33.5% / rok
-</div>
-</div>
-
-<div>
-<div style="opacity:0.6;">Prognoza 12M</div>
-<div style="font-size:36px;color:#d4af37;">
-€333 750
-</div>
-</div>
-
-</div>
-
-<!-- Login Style Box -->
-<div style="
-margin-top:80px;
-text-align:center;
-">
-
-<h2 style="color:#d4af37;">Private Access</h2>
-
-<input placeholder="Numer klienta (email)"
-style="
-padding:18px;
-width:300px;
-margin:15px;
-background:#070707;
-border:1px solid #333;
-color:white;
-border-radius:14px;
-">
-
-<br>
-
-<input type="password" placeholder="Hasło"
-style="
-padding:18px;
-width:300px;
-margin:15px;
-background:#070707;
-border:1px solid #333;
-color:white;
-border-radius:14px;
-">
-
-<br>
-
-<button onclick="loginCheck()"
-style="
-margin-top:25px;
-padding:18px 70px;
-border:1px solid #d4af37;
-background:transparent;
-color:#d4af37;
-cursor:pointer;
-border-radius:16px;
-">
-
-Zaloguj
-
-</button>
-
-<p id="loginMsg" style="color:#00ffaa;margin-top:20px;"></p>
-
-</div>
-
-</div>
-</div>
-
-<script>
-function loginCheck(){
-
-const email = document.querySelector("input").value;
-const password = document.querySelectorAll("input")[1].value;
-
-if(email==="cznitecki@gmail.com" && password==="232421"){
-document.getElementById("loginMsg").innerText="✅ Zalogowano pomyślnie";
-}
-else{
-document.getElementById("loginMsg").innerText="❌ Błędny login lub hasło";
+    letter-spacing:0.25px;
 }
 
+/* ===== Quantum Grid Field ===== */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+
+    background-size:90px 90px;
+
+    pointer-events:none;
+
+    opacity:0.4;
 }
-</script>
+
+/* ===== GOD MODE MAIN CONTAINER ===== */
+
+.god-shell{
+
+    max-width:1420px;
+
+    margin:70px auto;
+
+    padding:80px;
+
+    border-radius:60px;
+
+    background:
+    linear-gradient(
+        170deg,
+        rgba(14,14,14,0.98),
+        rgba(6,6,6,0.99)
+    );
+
+    backdrop-filter: blur(35px);
+
+    border:1px solid rgba(212,175,55,0.06);
+
+    box-shadow:
+
+    0 0 180px rgba(0,0,0,0.95),
+
+    inset 0 2px 40px rgba(255,255,255,0.01);
+
+    animation:godFade 1.8s ease;
+}
+
+/* ===== Luxury Swiss Gold Title ===== */
+
+.god-title{
+    color:#d4af37;
+
+    letter-spacing:8px;
+
+    font-weight:200;
+
+    text-transform:uppercase;
+}
+
+/* ===== Wealth Intelligence Cards ===== */
+
+.god-card{
+
+    background:
+    linear-gradient(180deg,#0f0f0f,#080808);
+
+    border-radius:46px;
+
+    padding:55px;
+
+    border:1px solid #1d1d1d;
+
+    box-shadow:
+
+    inset 0 2px 14px rgba(255,255,255,0.01),
+
+    0 40px 120px rgba(0,0,0,0.7);
+
+    transition:0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.god-card:hover{
+
+    transform:translateY(-8px) scale(1.015);
+
+    box-shadow:
+    0 60px 140px rgba(0,0,0,0.85);
+}
+
+/* ===== Financial Metrics ===== */
+
+.god-metric-value{
+
+    font-size:44px;
+    font-weight:200;
+
+    margin-top:12px;
+}
+
+/* ===== Swiss Private Input ===== */
+
+.god-input{
+
+    width:340px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:#050505;
+
+    border:1px solid #2a2a2a;
+
+    color:white;
+
+    transition:0.5s ease;
+}
+
+.god-input:focus{
+
+    outline:none;
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,0.3);
+}
+
+/* ===== Elite Private Bank Button ===== */
+
+.god-button{
+
+    padding:24px 90px;
+
+    border-radius:20px;
+
+    border:1px solid #d4af37;
+
+    background:transparent;
+
+    color:#d4af37;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:0.5s ease;
+}
+
+.god-button:hover{
+
+    background:rgba(212,175,55,0.1);
+
+    box-shadow:
+    0 0 45px rgba(212,175,55,0.35);
+}
+
+/* ===== Tier Glow System ===== */
+
+.tier-platinum{
+    color:#d4af37;
+    text-shadow:0 0 28px rgba(212,175,55,0.7);
+}
+
+.tier-elite{
+    color:#00ffaa;
+    text-shadow:0 0 25px rgba(0,255,170,0.6);
+}
+
+/* ===== Animation Engine ===== */
+
+@keyframes godFade{
+
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(0.97);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+</style>
