@@ -2,111 +2,77 @@
 font-family: 'Segoe UI', Georgia, serif;
 min-height:100vh;
 
+/* Premium finance background */
 background:
-radial-gradient(circle at 18% 15%, rgba(212,175,55,0.28), transparent 60%),
-radial-gradient(circle at 82% 85%, rgba(0,140,110,0.2), transparent 65%),
-linear-gradient(180deg,#020202,#060606,#0c0c0c,#111);
+radial-gradient(circle at 20% 15%, rgba(212,175,55,0.25), transparent 60%),
+radial-gradient(circle at 80% 85%, rgba(0,160,120,0.18), transparent 65%),
+linear-gradient(180deg,#020202,#090909,#0f0f0f);
 
 color:#e8e8e8;
 padding:60px;
 ">
 
 <div style="
-max-width:1300px;
+max-width:1200px;
 margin:auto;
 
-background:linear-gradient(165deg,rgba(14,14,14,0.98),rgba(4,4,4,0.99));
-backdrop-filter: blur(30px);
+/* Glass banking panel */
+background:rgba(0,0,0,0.88);
+backdrop-filter: blur(20px);
 
-border-radius:60px;
+padding:60px;
+border-radius:50px;
 
-border:1px solid rgba(212,175,55,0.06);
+border:1px solid rgba(212,175,55,0.08);
 
 box-shadow:
-0 0 180px rgba(0,0,0,0.95),
-inset 0 2px 50px rgba(255,255,255,0.01);
-
-padding:80px;
-
-animation:fadeInBank 1.6s ease;
+0 0 120px rgba(0,0,0,0.9),
+inset 0 0 40px rgba(255,255,255,0.01);
 ">
 
 <h1 style="
-text-align:center;
 color:#d4af37;
-letter-spacing:8px;
-font-weight:200;
+letter-spacing:6px;
+text-align:center;
+font-weight:300;
 ">
-SWISS PRIVATE WEALTH OS
+SWISS PRIVATE BANK ELITE
 </h1>
 
-<p style="text-align:center;opacity:0.6;">
-Ultra Elite Capital Management Interface
+<p style="text-align:center;opacity:0.7;">
+Premium wealth simulation dashboard
 </p>
 
-<!-- ===== METRICS ===== -->
-
+<!-- Metrics Row -->
 <div style="
 display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
-margin-top:70px;
+margin-top:60px;
 ">
 
 <div>
-<div style="opacity:0.6;">Kapitał klienta</div>
-<div style="font-size:42px;">€250 000</div>
+<div style="opacity:0.6;">Kapitał</div>
+<div style="font-size:36px;">€250 000</div>
 </div>
 
 <div>
 <div style="opacity:0.6;">Model zwrotu</div>
-<div style="font-size:42px;color:#00ffaa;">
+<div style="font-size:36px;color:#00ffaa;">
 33.5% / rok
 </div>
 </div>
 
 <div>
 <div style="opacity:0.6;">Prognoza 12M</div>
-<div style="font-size:42px;color:#d4af37;">
+<div style="font-size:36px;color:#d4af37;">
 €333 750
 </div>
 </div>
 
 </div>
 
-<!-- ===== GRAPH SIMULATION ===== -->
-
-<div style="
-margin-top:80px;
-background:#080808;
-padding:40px;
-border-radius:40px;
-border:1px solid #222;
-">
-
-<h2 style="color:#d4af37;">
-Projekcja wzrostu kapitału
-</h2>
-
-<div style="
-height:260px;
-margin-top:30px;
-display:flex;
-align-items:flex-end;
-gap:18px;
-">
-
-<div style="flex:1;height:40%;background:linear-gradient(180deg,#111,#222);border-radius:18px"></div>
-<div style="flex:1;height:55%;background:linear-gradient(180deg,#111,#d4af37);border-radius:18px"></div>
-<div style="flex:1;height:70%;background:linear-gradient(180deg,#111,#00ffaa);border-radius:18px"></div>
-<div style="flex:1;height:90%;background:linear-gradient(180deg,#111,#d4af37);border-radius:18px"></div>
-
-</div>
-
-</div>
-
-<!-- ===== PRIVATE ACCESS ===== -->
-
+<!-- Login Style Box -->
 <div style="
 margin-top:80px;
 text-align:center;
@@ -114,49 +80,48 @@ text-align:center;
 
 <h2 style="color:#d4af37;">Private Access</h2>
 
-<input placeholder="Client ID"
+<input placeholder="Numer klienta (email)"
 style="
-padding:20px;
-width:320px;
+padding:18px;
+width:300px;
 margin:15px;
-background:#050505;
-border:1px solid #2a2a2a;
+background:#070707;
+border:1px solid #333;
 color:white;
-border-radius:18px;
+border-radius:14px;
 ">
 
 <br>
 
-<input type="password" placeholder="Password"
+<input type="password" placeholder="Hasło"
 style="
-padding:20px;
-width:320px;
+padding:18px;
+width:300px;
 margin:15px;
-background:#050505;
-border:1px solid #2a2a2a;
+background:#070707;
+border:1px solid #333;
 color:white;
-border-radius:18px;
+border-radius:14px;
 ">
 
 <br>
 
-<button onclick="loginFake()"
+<button onclick="loginCheck()"
 style="
-margin-top:30px;
-padding:22px 90px;
-border-radius:20px;
+margin-top:25px;
+padding:18px 70px;
 border:1px solid #d4af37;
 background:transparent;
 color:#d4af37;
 cursor:pointer;
-font-size:17px;
+border-radius:16px;
 ">
 
-ENTER
+Zaloguj
 
 </button>
 
-<p id="msg" style="color:#00ffaa;margin-top:25px;"></p>
+<p id="loginMsg" style="color:#00ffaa;margin-top:20px;"></p>
 
 </div>
 
@@ -164,22 +129,17 @@ ENTER
 </div>
 
 <script>
-function loginFake(){
-document.getElementById("msg").innerText =
-"✅ Secure Swiss Private Session";
+function loginCheck(){
+
+const email = document.querySelector("input").value;
+const password = document.querySelectorAll("input")[1].value;
+
+if(email==="cznitecki@gmail.com" && password==="232421"){
+document.getElementById("loginMsg").innerText="✅ Zalogowano pomyślnie";
+}
+else{
+document.getElementById("loginMsg").innerText="❌ Błędny login lub hasło";
 }
 
+}
 </script>
-
-<style>
-@keyframes fadeInBank{
-from{
-opacity:0;
-transform:translateY(60px) scale(0.97);
-}
-to{
-opacity:1;
-transform:none;
-}
-}
-</style>
